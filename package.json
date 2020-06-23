@@ -1,10 +1,10 @@
 {
-  "name": "blocko",
+  "name": "react-layout-blocks",
   "version": "1.0.0",
   "description": "Layout components for React",
   "author": "g-elwell",
   "license": "MIT",
-  "repository": "g-elwell/blocko",
+  "repository": "g-elwell/react-layout-blocks",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

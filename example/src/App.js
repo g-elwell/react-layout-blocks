@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { BgImg, Col, Cols, Container, Section, H } from 'blocko'
+import { BgImg, Col, Cols, Container, Section, H } from 'react-layout-blocks'
 
-// import 'blocko/dist/index.css'
+// import 'react-layout-blocks/dist/index.css'
 
 const App = () => {
   return (

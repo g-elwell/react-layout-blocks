@@ -1,6 +1,6 @@
 {
-  "short_name": "blocko",
-  "name": "blocko",
+  "short_name": "react-layout-blocks",
+  "name": "react-layout-blocks",
   "icons": [
     {
       "src": "favicon.ico",
