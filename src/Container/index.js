@@ -1,5 +1,5 @@
 import React from 'react'
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
 
 import { vars } from '../lib/theme'
 
@@ -7,6 +7,7 @@ const Container = ({ children, maxWidth = vars.break.xxl, flush = false }) => {
   return (
     <div
       css={css`
+        box-sizing: border-box;
         width: 100%;
         max-width: ${maxWidth};
         margin-left: auto;

@@ -1,14 +1,15 @@
 import React from 'react'
-import { css } from 'styled-components'
+import { css } from 'styled-components/macro'
 
 // import { vars } from '../lib/theme';
 
-const BgImg = ({ ...props }) => {
+const BgImg = ({ ratio, ...props }) => {
   return (
     <img
       alt=''
       loading='lazy'
       css={css`
+        box-sizing: border-box;
         object-fit: cover;
         object-position: 50% 50%;
         position: absolute;

@@ -1,9 +1,9 @@
-import React from 'react';
-import { css } from 'styled-components';
+import React from 'react'
+import { css } from 'styled-components/macro'
 
-import { vars } from '../lib/theme';
+import { vars } from '../lib/theme'
 
-const Cover = ({
+const Section = ({
   children,
   flush = false,
   minHeight = 'auto',
@@ -14,21 +14,23 @@ const Cover = ({
   const getContrastingColor = (bg) => {
     switch (bg) {
       case vars.colors.primary.mid:
-        return vars.colors.white;
+        return vars.colors.white
       default:
-        return 'black';
+        return 'black'
     }
-  };
-  const headingColor = getContrastingColor(bg);
+  }
+  const headingColor = getContrastingColor(bg)
   return (
     <div
       css={css`
+        box-sizing: border-box;
         position: relative;
         min-height: ${minHeight};
         background-color: ${bg};
         display: flex;
         align-items: center;
         justify-content: center;
+
         ${!flush &&
         css`
           padding-top: 5vw;
@@ -47,7 +49,7 @@ const Cover = ({
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Cover;
+export default Section
