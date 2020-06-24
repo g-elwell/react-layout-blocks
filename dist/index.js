@@ -194,7 +194,7 @@ var Cols = function Cols(_ref) {
   return /*#__PURE__*/React.createElement(_StyledDiv$1, {
     _css2: _styled.css(["overflow:hidden;"])
   }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends({}, props, {
-    _css3: _styled.css(["width:100%;box-sizing:border-box;display:flex;flex-wrap:wrap;margin:-", ";& > *{padding:", ";}", ""], gutter, gutter, vAlign === 'center' && _styled.css(["align-items:center;"]))
+    _css3: _styled.css(["min-width:calc(100% - ", ");box-sizing:border-box;display:flex;flex-wrap:wrap;margin:-", ";& > *{padding:", ";}", ""], gutter * 2, gutter, gutter, vAlign === 'center' && _styled.css(["align-items:center;"]))
   }), children));
 };
 

@@ -11,7 +11,7 @@ const Cols = ({ children, vAlign, gutter = vars.spacing[2], ...props }) => (
   >
     <div
       css={css`
-        width: 100%;
+        min-width: calc(100% - ${gutter * 2});
         box-sizing: border-box;
         display: flex;
         flex-wrap: wrap;
