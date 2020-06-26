@@ -1,50 +1,16 @@
 import _styled, { css } from 'styled-components';
 import React from 'react';
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
 var _StyledImg = _styled("img").withConfig({
   displayName: "BgImg___StyledImg",
   componentId: "sc-1k9vxn0-0"
-})(["", ""], function (p) {
-  return p._css2;
-});
+})(["", ""], p => p._css2);
 
-var BgImg = function BgImg(_ref) {
-  var props = _objectWithoutPropertiesLoose(_ref, ["ratio"]);
-
-  return /*#__PURE__*/React.createElement(_StyledImg, _extends({
+const BgImg = ({
+  ratio,
+  ...props
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledImg, Object.assign({
     alt: "",
     loading: "lazy"
   }, props, {
@@ -52,7 +18,7 @@ var BgImg = function BgImg(_ref) {
   }));
 };
 
-var vars = {
+const vars = {
   fonts: {
     body: '-apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;',
     headings: '"Poppins", sans-serif;'
@@ -141,7 +107,7 @@ var vars = {
   shadows: ['0 10px 40px -15px rgba(0, 0, 0, 0.8)', '0 10px 30px -5px rgba(0,0,0,0.3)'],
   spacing: ['5px', '10px', '20px', '40px', '60px', '80px'],
   borderRadius: ['4px', '8px', '16px', '24px'],
-  "break": {
+  break: {
     xs: '400px',
     sm: '560px',
     md: '780px',
@@ -154,83 +120,64 @@ var vars = {
 var _StyledDiv = _styled("div").withConfig({
   displayName: "Col___StyledDiv",
   componentId: "s777id-0"
-})(["", ""], function (p) {
-  return p._css2;
-});
+})(["", ""], p => p._css2);
 
-var Col = function Col(_ref) {
-  var children = _ref.children,
-      _ref$width = _ref.width,
-      width = _ref$width === void 0 ? 1 : _ref$width;
-  return /*#__PURE__*/React.createElement(_StyledDiv, {
-    _css2: css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars["break"].md, width * 100 + '%')
-  }, children);
-};
+const Col = ({
+  children,
+  width: _width = 1
+}) => /*#__PURE__*/React.createElement(_StyledDiv, {
+  _css2: css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars.break.md, _width * 100 + '%')
+}, children);
 
 var _StyledDiv$1 = _styled("div").withConfig({
   displayName: "Cols___StyledDiv",
   componentId: "sc-1vxxr29-0"
-})(["", ""], function (p) {
-  return p._css2;
-});
+})(["", ""], p => p._css2);
 
 var _StyledDiv2 = _styled("div").withConfig({
   displayName: "Cols___StyledDiv2",
   componentId: "sc-1vxxr29-1"
-})(["", ""], function (p) {
-  return p._css3;
-});
+})(["", ""], p => p._css3);
 
-var Cols = function Cols(_ref) {
-  var children = _ref.children,
-      vAlign = _ref.vAlign,
-      _ref$gutter = _ref.gutter,
-      gutter = _ref$gutter === void 0 ? vars.spacing[2] : _ref$gutter,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "vAlign", "gutter"]);
-
-  return /*#__PURE__*/React.createElement(_StyledDiv$1, {
-    _css2: css(["overflow:hidden;"])
-  }, /*#__PURE__*/React.createElement(_StyledDiv2, _extends({}, props, {
-    _css3: css(["min-width:calc(100% - ", ");box-sizing:border-box;display:flex;flex-wrap:wrap;margin:-", ";& > *{padding:", ";}", ""], gutter * 2, gutter, gutter, vAlign === 'center' && css(["align-items:center;"]))
-  }), children));
-};
+const Cols = ({
+  children,
+  vAlign,
+  gutter: _gutter = vars.spacing[2],
+  ...props
+}) => /*#__PURE__*/React.createElement(_StyledDiv$1, {
+  _css2: css(["overflow:hidden;"])
+}, /*#__PURE__*/React.createElement(_StyledDiv2, Object.assign({}, props, {
+  _css3: css(["min-width:calc(100% - ", ");box-sizing:border-box;display:flex;flex-wrap:wrap;margin:-", ";& > *{padding:", ";}", ""], _gutter * 2, _gutter, _gutter, vAlign === 'center' && css(["align-items:center;"]))
+}), children));
 
 var _StyledDiv$2 = _styled("div").withConfig({
   displayName: "Container___StyledDiv",
   componentId: "sc-1814usb-0"
-})(["", ""], function (p) {
-  return p._css2;
-});
+})(["", ""], p => p._css2);
 
-var Container = function Container(_ref) {
-  var children = _ref.children,
-      _ref$maxWidth = _ref.maxWidth,
-      maxWidth = _ref$maxWidth === void 0 ? vars["break"].xxl : _ref$maxWidth,
-      _ref$flush = _ref.flush,
-      flush = _ref$flush === void 0 ? false : _ref$flush;
+const Container = ({
+  children,
+  maxWidth: _maxWidth = vars.break.xxl,
+  flush: _flush = false
+}) => {
   return /*#__PURE__*/React.createElement(_StyledDiv$2, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], maxWidth, !flush && css(["padding-left:5vw;padding-right:5vw;"]))
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;background-color:blue;", ""], _maxWidth, !_flush && css(["padding-left:5vw;padding-right:5vw;"]))
   }, children);
 };
 
 var _StyledDiv$3 = _styled("div").withConfig({
   displayName: "Section___StyledDiv",
   componentId: "q0b8d2-0"
-})(["", ""], function (p) {
-  return p._css2;
-});
+})(["", ""], p => p._css2);
 
-var Section = function Section(_ref) {
-  var children = _ref.children,
-      _ref$flush = _ref.flush,
-      flush = _ref$flush === void 0 ? false : _ref$flush,
-      _ref$minHeight = _ref.minHeight,
-      minHeight = _ref$minHeight === void 0 ? 'auto' : _ref$minHeight,
-      _ref$bg = _ref.bg,
-      bg = _ref$bg === void 0 ? vars.colors.white : _ref$bg,
-      props = _objectWithoutPropertiesLoose(_ref, ["children", "flush", "minHeight", "bg"]);
-
-  var getContrastingColor = function getContrastingColor(bg) {
+const Section = ({
+  children,
+  flush: _flush = false,
+  minHeight: _minHeight = 'auto',
+  bg: _bg = vars.colors.white,
+  ...props
+}) => {
+  const getContrastingColor = bg => {
     switch (bg) {
       case vars.colors.primary.mid:
         return vars.colors.white;
@@ -240,21 +187,20 @@ var Section = function Section(_ref) {
     }
   };
 
-  var headingColor = getContrastingColor(bg);
-  return /*#__PURE__*/React.createElement(_StyledDiv$3, _extends({}, props, {
-    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", " .h1,.h2,.h3,.h4,.h5,.h6{color:", ";}"], minHeight, bg, !flush && css(["padding-top:5vw;padding-bottom:5vw;"]), headingColor)
+  const headingColor = getContrastingColor(_bg);
+  return /*#__PURE__*/React.createElement(_StyledDiv$3, Object.assign({}, props, {
+    _css2: css(["box-sizing:border-box;position:relative;min-height:", ";background-color:", ";display:flex;align-items:center;justify-content:center;", " .h1,.h2,.h3,.h4,.h5,.h6{color:", ";}"], _minHeight, _bg, !_flush && css(["padding-top:5vw;padding-bottom:5vw;"]), headingColor)
   }), children);
 };
 
-var H = function H(_ref) {
-  var children = _ref.children,
-      _ref$level = _ref.level,
-      level = _ref$level === void 0 ? 3 : _ref$level,
-      _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 2 : _ref$size;
-  var Tag = 'h' + level;
+const H = ({
+  children,
+  level: _level = 3,
+  size: _size = 2
+}) => {
+  const Tag = 'h' + _level;
   return /*#__PURE__*/React.createElement(Tag, {
-    className: 'h' + size
+    className: 'h' + _size
   }, children);
 };
 

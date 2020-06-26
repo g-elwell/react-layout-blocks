@@ -212,7 +212,7 @@ var Container = function Container(_ref) {
       _ref$flush = _ref.flush,
       flush = _ref$flush === void 0 ? false : _ref$flush;
   return /*#__PURE__*/React.createElement(_StyledDiv$2, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], maxWidth, !flush && _styled.css(["padding-left:5vw;padding-right:5vw;"]))
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;background-color:blue;", ""], maxWidth, !flush && _styled.css(["padding-left:5vw;padding-right:5vw;"]))
   }, children);
 };
 

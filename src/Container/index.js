@@ -12,6 +12,7 @@ const Container = ({ children, maxWidth = vars.break.xxl, flush = false }) => {
         max-width: ${maxWidth};
         margin-left: auto;
         margin-right: auto;
+        background-color: blue;
         ${!flush &&
         css`
           padding-left: 5vw;
