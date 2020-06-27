@@ -161,14 +161,14 @@ var _StyledDiv = _styled__default("div").withConfig({
   return p._css2;
 });
 
-var Col = function Col(_ref) {
+function Col(_ref) {
   var children = _ref.children,
       _ref$width = _ref.width,
       width = _ref$width === void 0 ? 1 : _ref$width;
   return /*#__PURE__*/React.createElement(_StyledDiv, {
     _css2: _styled.css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars["break"].md, width * 100 + '%')
   }, children);
-};
+}
 
 var _StyledDiv$1 = _styled__default("div").withConfig({
   displayName: "Cols___StyledDiv",
@@ -212,7 +212,7 @@ var Container = function Container(_ref) {
       _ref$flush = _ref.flush,
       flush = _ref$flush === void 0 ? false : _ref$flush;
   return /*#__PURE__*/React.createElement(_StyledDiv$2, {
-    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;background-color:blue;", ""], maxWidth, !flush && _styled.css(["padding-left:5vw;padding-right:5vw;"]))
+    _css2: _styled.css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], maxWidth, !flush && _styled.css(["padding-left:5vw;padding-right:5vw;"]))
   }, children);
 };
 
@@ -254,7 +254,7 @@ var H = function H(_ref) {
       _ref$level = _ref.level,
       level = _ref$level === void 0 ? 3 : _ref$level,
       _ref$size = _ref.size,
-      size = _ref$size === void 0 ? 2 : _ref$size;
+      size = _ref$size === void 0 ? level : _ref$size;
   var Tag = 'h' + level;
   return /*#__PURE__*/React.createElement(Tag, {
     className: 'h' + size

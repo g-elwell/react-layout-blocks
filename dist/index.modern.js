@@ -122,12 +122,14 @@ var _StyledDiv = _styled("div").withConfig({
   componentId: "s777id-0"
 })(["", ""], p => p._css2);
 
-const Col = ({
+function Col({
   children,
-  width: _width = 1
-}) => /*#__PURE__*/React.createElement(_StyledDiv, {
-  _css2: css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars.break.md, _width * 100 + '%')
-}, children);
+  width = 1
+}) {
+  return /*#__PURE__*/React.createElement(_StyledDiv, {
+    _css2: css(["box-sizing:border-box;flex:0 0 100%;@media screen and (min-width:", "){flex:0 0 ", ";}"], vars.break.md, width * 100 + '%')
+  }, children);
+}
 
 var _StyledDiv$1 = _styled("div").withConfig({
   displayName: "Cols___StyledDiv",
@@ -161,7 +163,7 @@ const Container = ({
   flush: _flush = false
 }) => {
   return /*#__PURE__*/React.createElement(_StyledDiv$2, {
-    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;background-color:blue;", ""], _maxWidth, !_flush && css(["padding-left:5vw;padding-right:5vw;"]))
+    _css2: css(["box-sizing:border-box;width:100%;max-width:", ";margin-left:auto;margin-right:auto;", ""], _maxWidth, !_flush && css(["padding-left:5vw;padding-right:5vw;"]))
   }, children);
 };
 
@@ -196,7 +198,7 @@ const Section = ({
 const H = ({
   children,
   level: _level = 3,
-  size: _size = 2
+  size: _size = _level
 }) => {
   const Tag = 'h' + _level;
   return /*#__PURE__*/React.createElement(Tag, {

@@ -45,6 +45,21 @@ const App = () => {
           </Cols>
         </Container>
       </Section>
+      <Section>
+        <Container>
+          <Cols>
+            <Col width={0.333}>
+              <H>One</H>
+            </Col>
+            <Col width={0.333}>
+              <H>Two</H>
+            </Col>
+            <Col width={0.333}>
+              <H>Three</H>
+            </Col>
+          </Cols>
+        </Container>
+      </Section>
     </div>
   )
 }
